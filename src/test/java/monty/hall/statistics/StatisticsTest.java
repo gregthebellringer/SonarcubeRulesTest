@@ -12,9 +12,9 @@ public class StatisticsTest {
         stats.addGame(true);
         stats.addGame(true);
         stats.addGame(true);
-        assertEquals(stats.getWinPercentage(), 1.0, 0.1);
+        assertEquals(1.0, stats.getWinPercentage(), 0.1);
         stats.addGame(false);
-        assertEquals(stats.getWinPercentage(), 0.75, 0.1);
+        assertEquals(0.75, stats.getWinPercentage(), 0.1);
     }
 
     @Test
@@ -23,8 +23,8 @@ public class StatisticsTest {
         stats.addGame(false);
         stats.addGame(false);
         stats.addGame(false);
-        assertEquals(stats.getWinPercentage(), 0.0, 0.1);
+        assertEquals(0.0, stats.getWinPercentage(), 0.1);
         stats.addGame(true);
-        assertEquals(stats.getWinPercentage(), 0.25, 0.1);
+        assertEquals(0.25, stats.getWinPercentage(), 0.1);
     }
 }

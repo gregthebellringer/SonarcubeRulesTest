@@ -7,7 +7,7 @@ package monty.hall.box;
 
 public class Box {
 
-    private Content content;
+    public Content content;
     private Boolean isOpen = false;
 
     public Box(Content content) {

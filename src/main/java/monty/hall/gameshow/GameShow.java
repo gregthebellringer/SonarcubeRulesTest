@@ -7,7 +7,6 @@ import java.util.Optional;
 
 /**
  * The GameShow class represents the Monty Hall game show.
- *
  */
 
 public class GameShow {
@@ -23,6 +22,15 @@ public class GameShow {
      * The host opens a empty box which is not the player picked box.
      */
     public void hostOpensEmptyBox() {
+        Optional<Box> emptyBox = boxes.getBoxesList().stream()
+                .filter(box -> box.isEmpty() &&
+                        !isPlayerPickedBox(box))
+                .findFirst();
+
+        emptyBox.ifPresent(Box::openBox);
+    }
+
+    public void openEmptyBox() {
         Optional<Box> emptyBox = boxes.getBoxesList().stream()
                 .filter(box -> box.isEmpty() &&
                         !isPlayerPickedBox(box))
@@ -54,11 +62,13 @@ public class GameShow {
         return remainingBox.map(Box::containsMoney).orElse(false);
     }
 
+    public void playerPicksBox() {
+        playerPickedBox = boxes.getRandomBoxIndex();
+    }
+
     private boolean isPlayerPickedBox(final Box box) {
         return box.equals(boxes.getBoxesList().get(playerPickedBox));
     }
 
-    public void playerPicksBox() {
-        playerPickedBox = boxes.getRandomBoxIndex();
-    }
+
 }

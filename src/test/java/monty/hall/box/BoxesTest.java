@@ -29,7 +29,7 @@ public class BoxesTest {
                 amountOfEmptyBoxes++;
             }
         }
-        assertEquals(amountOfEmptyBoxes, 2);
+        assertEquals(2, amountOfEmptyBoxes);
     }
 
     @Test
@@ -43,6 +43,6 @@ public class BoxesTest {
                 amountOfEmptyBoxes++;
             }
         }
-        assertEquals(amountOfEmptyBoxes, Boxes.AMOUNT_OF_BOXES);
+        assertEquals(Boxes.AMOUNT_OF_BOXES, amountOfEmptyBoxes);
     }
 }

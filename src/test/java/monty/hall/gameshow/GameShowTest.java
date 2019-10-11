@@ -2,7 +2,6 @@ package monty.hall.gameshow;
 
 
 import monty.hall.box.Box;
-import monty.hall.box.Box;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,7 +13,7 @@ public class GameShowTest {
         GameShow gameShow = new GameShow();
         gameShow.startNewGame();
         gameShow.playerPicksBox();
-        gameShow.hostOpensEmptyBox();
+        gameShow.openEmptyBox();
 
         Object[] emptyAndOpenBox = gameShow.boxes.getBoxesList().stream()
                 .filter(box -> box.isOpen() && box.isEmpty())

@@ -12,7 +12,6 @@ import java.util.Random;
 public class Boxes {
 
     public static final int AMOUNT_OF_BOXES = 3;
-    private static final Random random = new Random();
     private List<Box> boxesList = new ArrayList<>(AMOUNT_OF_BOXES);
 
     public Boxes() {
@@ -35,6 +34,7 @@ public class Boxes {
     }
 
     public int getRandomBoxIndex() {
+        Random random = new Random();
         return random.nextInt(AMOUNT_OF_BOXES);
     }
 
